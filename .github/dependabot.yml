@@ -1,0 +1,35 @@
+version: 2
+updates:
+  # CLI dependencies
+  - package-ecosystem: npm
+    directory: /cli
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore
+      include: scope
+    groups:
+      dev-dependencies:
+        dependency-type: development
+      production-dependencies:
+        dependency-type: production
+
+  # The style gallery is a separate app; keep its updates from crowding the
+  # CLI ones.
+  - package-ecosystem: npm
+    directory: /gallery
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: chore
+      include: scope
+
+  # Pinned GitHub Actions
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: chore

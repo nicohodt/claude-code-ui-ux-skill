@@ -1,0 +1,21 @@
+{
+  "platform": "claude",
+  "displayName": "Claude Code",
+  "installType": "full",
+  "folderStructure": {
+    "root": ".claude",
+    "skillPath": "skills/ui-ux-pro-max",
+    "filename": "SKILL.md"
+  },
+  "scriptPath": "skills/ui-ux-pro-max/scripts/search.py",
+  "frontmatter": {
+    "name": "ui-ux-pro-max",
+    "description": "UI/UX design intelligence. Searchable local database with 67 styles, 161 palettes, 57 font pairings, 25 charts, and 21 stacks (React, Next.js, Vue, Svelte, Astro, SwiftUI, React Native, Flutter, WPF, WinUI 3, UWP, Avalonia, Uno Platform, Nuxt, Nuxt UI, Tailwind, shadcn/ui, Jetpack Compose, Three.js, Angular, Laravel). Use when designing, building, or reviewing UI: pages, components, color schemes, typography, layout, accessibility, animation, or data visualization."
+  },
+  "sections": {
+    "quickReference": true
+  },
+  "title": "UI/UX Pro Max - Design Intelligence",
+  "description": "Comprehensive design guide for web, mobile, and desktop applications. Contains 67 styles, 161 color palettes, 57 font pairings, 99 UX guidelines, and 25 chart types across 22 technology stacks. Searchable database with priority-based recommendations.",
+  "skillOrWorkflow": "Skill"
+}

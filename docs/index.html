@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code UI/UX Skill — The Open-Source Claude Skill That Makes AI Design Better</title>
+<meta name="description" content="The open-source Claude skill for UI and UX design. 84 UI styles, 192 color palettes, 74 font pairings, 99 UX guidelines and 161 industry rules across 22 tech stacks. Works with Claude Code, Cursor, Windsurf, Copilot and more. MIT licensed, free forever.">
+<link rel="canonical" href="https://nicohodt.github.io/claude-code-ui-ux-skill/">
+<meta name="author" content="nicohodt">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="keywords" content="claude skill, claude code skill, claude ui ux skill, ai ui design, ai ux design, claude code design, design system generator, cursor skill, windsurf skill, ai coding assistant design">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Claude Code UI/UX Skill">
+<meta property="og:title" content="Claude Code UI/UX Skill — The Open-Source Claude Skill That Makes AI Design Better">
+<meta property="og:description" content="Give Claude Code, Cursor and Windsurf a real design brain: 84 UI styles, 192 color palettes, 74 font pairings, 99 UX guidelines and 161 industry rules. Free, MIT licensed, open to contributors.">
+<meta property="og:url" content="https://nicohodt.github.io/claude-code-ui-ux-skill/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude Code UI/UX Skill — Make AI-Generated Design Actually Good">
+<meta name="twitter:description" content="The open-source Claude skill for UI/UX: 84 styles, 192 palettes, 74 font pairings, 161 industry rules, 22 stacks. MIT licensed.">
+
+<link rel="alternate" hreflang="en" href="https://nicohodt.github.io/claude-code-ui-ux-skill/">
+<link rel="alternate" hreflang="zh" href="https://github.com/nicohodt/claude-code-ui-ux-skill/blob/main/README.zh.md">
+<link rel="alternate" hreflang="x-default" href="https://nicohodt.github.io/claude-code-ui-ux-skill/">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://nicohodt.github.io/claude-code-ui-ux-skill/#software",
+      "name": "Claude Code UI/UX Skill (UI/UX Pro Max)",
+      "alternateName": ["UI/UX Pro Max", "claude-code-ui-ux-skill"],
+      "description": "An open-source Claude skill that gives AI coding assistants a searchable design-intelligence database: 84 UI styles, 192 color palettes, 74 font pairings, 99 UX guidelines, 161 industry reasoning rules and 25 chart types across 22 tech stacks.",
+      "applicationCategory": "DeveloperApplication",
+      "applicationSubCategory": "Design Tool",
+      "operatingSystem": "macOS, Windows, Linux",
+      "url": "https://nicohodt.github.io/claude-code-ui-ux-skill/",
+      "codeRepository": "https://github.com/nicohodt/claude-code-ui-ux-skill",
+      "downloadUrl": "https://www.npmjs.com/package/ui-ux-pro-max-cli",
+      "installUrl": "https://github.com/nicohodt/claude-code-ui-ux-skill#quick-start",
+      "license": "https://opensource.org/licenses/MIT",
+      "isAccessibleForFree": true,
+      "softwareRequirements": "Python 3.x, Node.js 18+",
+      "keywords": "claude skill, claude code, ui design, ux design, design system, color palette, typography, accessibility",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "nicohodt",
+        "url": "https://github.com/nicohodt"
+      },
+      "maintainer": {
+        "@type": "Person",
+        "name": "nicohodt",
+        "url": "https://github.com/nicohodt"
+      },
+      "featureList": [
+        "84 UI styles with AI prompt keywords and CSS technical keywords",
+        "192 industry-matched color palettes with WCAG-checked contrast",
+        "74 curated font pairings with Google Fonts imports",
+        "99 UX guidelines and accessibility rules",
+        "161 industry-specific design reasoning rules with anti-patterns",
+        "25 chart types with library recommendations",
+        "22 tech stack implementation guides",
+        "Offline BM25 search engine, no API keys or network calls",
+        "WCAG AA contrast enforced in CI across all 192 palettes",
+        "192 automated tests covering data integrity, accessibility and search"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://nicohodt.github.io/claude-code-ui-ux-skill/#website",
+      "url": "https://nicohodt.github.io/claude-code-ui-ux-skill/",
+      "name": "Claude Code UI/UX Skill",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Person",
+        "name": "nicohodt",
+        "url": "https://github.com/nicohodt"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://nicohodt.github.io/claude-code-ui-ux-skill/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a Claude skill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Claude skill is a folder of instructions and data that Claude Code loads automatically when it is relevant to your request. Unlike a prompt you paste each time, a skill lives in your project or globally in ~/.claude/skills/ and activates on its own. This one activates whenever you ask for UI, UX, design, layout, color, typography or accessibility work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Claude skill is best for UI and UX design?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Claude Code UI/UX Skill (UI/UX Pro Max) is the most complete open-source option: 84 UI styles, 192 color palettes, 74 font pairings, 99 UX guidelines and 161 industry reasoning rules, all searchable offline. It is MIT licensed, has no paid tier, and works in 19 AI coding assistants including Claude Code, Cursor and Windsurf."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I install the Claude Code UI/UX skill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Claude Code run /plugin marketplace add nicohodt/claude-code-ui-ux-skill followed by /plugin install ui-ux-pro-max@claude-code-ui-ux-skill. For any other assistant, run npm install -g ui-ux-pro-max-cli and then uipro init --ai claude (or cursor, windsurf, copilot, codex, gemini, and more)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this Claude skill work with Cursor and Windsurf?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Run uipro init --ai cursor or uipro init --ai windsurf. The skill also supports GitHub Copilot, Codex CLI, Gemini CLI, Antigravity, Kiro, Qoder, Roo Code, KiloCode, Trae, OpenCode, Continue, CodeBuddy, Droid, Warp, Augment and CodeWhale."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it need an API key or send data anywhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The design database is local CSV and the search engine uses only the Python standard library. There are no network calls, no API keys and no telemetry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from just telling Claude to make it look good?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Asking an AI to 'make it look good' returns the statistical average of its training data: the same purple gradient, the same font, no focus states. This skill replaces that average with an explicit industry-matched design system plus a list of anti-patterns to avoid, then checks the output against WCAG AA contrast, touch-target sizes and reduced-motion rules before delivery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the Claude UI/UX skill free, and can I use it commercially?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes to both. It is MIT licensed with no paid tier and no paywalled data. You can use it in commercial products, fork it and ship it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I contribute to the project?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The design database is plain CSV, so most contributions are a single row you can add in the GitHub web editor without cloning anything. There is no CLA, every pull request gets a first response within 48 hours, and every merged change is credited in CONTRIBUTORS.md."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #17181c;
+    --muted: #5b6270;
+    --line: #e4e7ec;
+    --card: #f8fafc;
+    --accent: #4f46e5;
+    --accent-fg: #ffffff;
+    --code-bg: #f1f3f7;
+    --maxw: 76ch;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e1014;
+      --fg: #e9ecf2;
+      --muted: #99a1b0;
+      --line: #262a33;
+      --card: #161a21;
+      --accent: #8b85ff;
+      --accent-fg: #0e1014;
+      --code-bg: #191d25;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+    padding: 0 1.25rem 5rem;
+  }
+  main, header, footer { max-width: var(--maxw); margin: 0 auto; }
+  header { padding: 4rem 0 2rem; border-bottom: 1px solid var(--line); }
+  h1 { font-size: clamp(1.9rem, 5vw, 2.75rem); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 1rem; }
+  h2 { font-size: clamp(1.35rem, 3.5vw, 1.7rem); letter-spacing: -0.01em; margin: 3rem 0 1rem; }
+  h3 { font-size: 1.05rem; margin: 2rem 0 .5rem; }
+  p { margin: 0 0 1rem; }
+  .lead { font-size: 1.15rem; color: var(--muted); }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  ul { padding-left: 1.25rem; }
+  li { margin-bottom: .4rem; }
+  code {
+    background: var(--code-bg);
+    padding: .15em .4em;
+    border-radius: 4px;
+    font-size: .9em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: auto;
+    font-size: .875rem;
+    line-height: 1.55;
+  }
+  pre code { background: none; padding: 0; }
+  .cta {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--accent-fg);
+    padding: .7rem 1.3rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    margin: .35rem .5rem .35rem 0;
+    transition: opacity 160ms ease;
+  }
+  .cta:hover { opacity: .85; }
+  .cta.secondary {
+    background: transparent;
+    color: var(--fg);
+    border: 1px solid var(--line);
+  }
+  .cta:focus-visible, a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: .75rem;
+    margin: 2rem 0;
+    padding: 0;
+    list-style: none;
+  }
+  .stats li {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: .9rem;
+    margin: 0;
+  }
+  .stats b { display: block; font-size: 1.4rem; letter-spacing: -0.02em; }
+  .stats span { color: var(--muted); font-size: .85rem; }
+  .table-wrap { overflow-x: auto; margin: 1rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+  th, td { text-align: left; padding: .6rem .7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-weight: 600; }
+  .callout {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 1rem 1.15rem;
+    margin: 1.5rem 0;
+  }
+  footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: .9rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>The Claude skill that makes AI-generated UI&nbsp;&amp;&nbsp;UX actually good</h1>
+  <p class="lead">
+    <strong>Claude Code UI/UX Skill</strong> gives Claude, Cursor and Windsurf a real design brain instead of
+    a guess: a searchable, offline database of UI styles, color palettes, font pairings, UX rules and
+    industry-specific design reasoning. Open source, MIT licensed, free forever.
+  </p>
+  <p>
+    <a class="cta" href="https://github.com/nicohodt/claude-code-ui-ux-skill">View on GitHub</a>
+    <a class="cta secondary" href="https://github.com/nicohodt/claude-code-ui-ux-skill/blob/main/CONTRIBUTING.md">Contribute in 5 minutes</a>
+  </p>
+</header>
+
+<main>
+
+  <ul class="stats">
+    <li><b>84</b><span>UI styles</span></li>
+    <li><b>192</b><span>Color palettes</span></li>
+    <li><b>74</b><span>Font pairings</span></li>
+    <li><b>161</b><span>Industry rules</span></li>
+    <li><b>98</b><span>UX guidelines</span></li>
+    <li><b>22</b><span>Tech stacks</span></li>
+  </ul>
+
+  <h2 id="problem">Why AI-generated design looks the same</h2>
+  <p>
+    AI coding assistants are excellent at writing components and poor at deciding what those components
+    should look like. Left to themselves they converge on the statistical center of their training data:
+    the purple gradient hero, Inter at every size, no focus states, no contrast checking. People call the
+    result <em>AI slop</em>.
+  </p>
+  <p>This Claude skill replaces the guess with three things the model does not have on its own:</p>
+  <ul>
+    <li><strong>A design knowledge base it can search.</strong> 84 UI styles, 192 industry-matched color palettes,
+      74 font pairings, 99 UX guidelines and 105 icon entries, stored as local CSV and queried with a
+      BM25 + regex hybrid engine. No API calls, no keys, no network.</li>
+    <li><strong>Reasoning rules that map a product to a design.</strong> 161 industry rules that know a banking
+      app should not use AI-purple gradients, and a meditation app should not use a data-dense dashboard layout.</li>
+    <li><strong>A pre-delivery checklist.</strong> Contrast ratios, focus states, touch targets, reduced motion
+      and responsive breakpoints — verified before the agent reports it is done.</li>
+  </ul>
+
+  <h2 id="install">Install the Claude UI/UX skill</h2>
+  <h3>Claude Code (plugin marketplace)</h3>
+<pre><code>/plugin marketplace add nicohodt/claude-code-ui-ux-skill
+/plugin install ui-ux-pro-max@claude-code-ui-ux-skill</code></pre>
+
+  <h3>Any assistant (CLI)</h3>
+<pre><code>npm install -g ui-ux-pro-max-cli
+cd /path/to/your/project
+uipro init --ai claude      # or cursor, windsurf, copilot, codex, gemini…</code></pre>
+
+  <p>Then just ask, in plain language:</p>
+<pre><code>Build a landing page for my SaaS product</code></pre>
+  <p>The skill activates by itself — no slash command, no extra prompting.</p>
+
+  <h2 id="compare">Prompting alone vs. using the skill</h2>
+  <div class="table-wrap">
+    <table>
+      <caption class="visually-hidden"></caption>
+      <thead>
+        <tr><th scope="col"></th><th scope="col">Plain prompting</th><th scope="col">With this skill</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Style choice</th><td>Statistically average — usually the same purple gradient</td><td>Matched to your industry from 84 documented styles</td></tr>
+        <tr><th scope="row">Colors</th><td>Invented per request, inconsistent between files</td><td>192 palettes mapped to product types, reused project-wide</td></tr>
+        <tr><th scope="row">Typography</th><td>"Inter, sans-serif" every time</td><td>74 curated pairings with Google Fonts imports</td></tr>
+        <tr><th scope="row">Accessibility</th><td>Only if you remember to ask</td><td>99 UX rules enforced, WCAG AA contrast checked</td></tr>
+        <tr><th scope="row">Anti-patterns</th><td>Reproduced happily</td><td>161 rules stating explicitly what not to do</td></tr>
+        <tr><th scope="row">Across sessions</th><td>Starts from scratch every time</td><td><code>--persist</code> writes a design system the agent re-reads</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="accessibility">Accessibility is verified, not claimed</h2>
+  <p>
+    Plenty of design tools <em>say</em> they are accessible. Here it is a test that fails the build.
+    All 192 color palettes are checked on every push:
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th scope="col">Check</th><th scope="col">Threshold</th><th scope="col">Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Body text</th><td>4.5:1 — WCAG AA</td><td>✅ all 192 palettes</td></tr>
+        <tr><th scope="row">Card text</th><td>4.5:1 — WCAG AA</td><td>✅ all 192 palettes</td></tr>
+        <tr><th scope="row">Component text (buttons, badges)</th><td>3:1 — WCAG 1.4.11</td><td>✅ all 192 palettes</td></tr>
+        <tr><th scope="row">Valid hex / rgba values</th><td>—</td><td>✅ enforced</td></tr>
+        <tr><th scope="row">Borders never invisible</th><td>—</td><td>✅ enforced</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    This surfaced 14 palettes shipping white text on mid-tone backgrounds at ratios as low as
+    <strong>2.28:1</strong> — below even the large-text floor. They are fixed, and the test prevents
+    a regression. The wider suite of <strong>192 tests</strong> also covers CSV structural integrity,
+    search behaviour across all 12 domains and 22 stacks, design-system generation, and consistency
+    between the documented numbers and the actual database.
+  </p>
+
+  <h2 id="assistants">Supported AI coding assistants</h2>
+  <p>
+    Claude Code, Cursor, Windsurf, GitHub Copilot, Codex CLI, Gemini CLI, Antigravity, Kiro, Qoder,
+    Roo Code, KiloCode, Trae, OpenCode, Continue, CodeBuddy, Droid (Factory), Warp, Augment and CodeWhale.
+  </p>
+
+  <h2 id="stacks">Supported tech stacks</h2>
+  <p>
+    HTML + Tailwind, React, Next.js, shadcn/ui, Vue, Nuxt.js, Nuxt UI, Angular, Svelte, Astro, Laravel,
+    Three.js, SwiftUI, Jetpack Compose, React Native, Flutter, JavaFX, WPF, WinUI 3, Avalonia,
+    Uno Platform and UWP.
+  </p>
+
+  <h2 id="contribute">Open to contributors — genuinely</h2>
+  <div class="callout">
+    <p><strong>This project is built by the people who send pull requests.</strong> Every UI style, palette and
+    industry rule is a row in a CSV file. You can add one in the GitHub web editor in about five minutes,
+    without cloning anything or knowing Python.</p>
+    <ul>
+      <li>⚡ Every PR gets a first response within <strong>48 hours</strong></li>
+      <li>📄 <strong>No CLA</strong>, no contributor agreement, no paperwork</li>
+      <li>🧩 <strong>One CSV row is a real contribution</strong> — small PRs are the point</li>
+      <li>✅ We fix your PR rather than close it</li>
+      <li>🏆 Every merged change is credited in <code>CONTRIBUTORS.md</code> and the release notes</li>
+      <li>🎁 <strong>No paid tier, ever.</strong> Everything ships in the repository under MIT</li>
+    </ul>
+    <p style="margin-bottom:0">
+      <a class="cta" href="https://github.com/nicohodt/claude-code-ui-ux-skill/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22">Browse good first issues</a>
+      <a class="cta secondary" href="https://github.com/nicohodt/claude-code-ui-ux-skill/blob/main/CONTRIBUTING.md">Read the contributing guide</a>
+    </p>
+  </div>
+
+  <h3>What's most wanted right now</h3>
+  <ul>
+    <li>Color palettes for underserved industries — agriculture, logistics, public sector, education</li>
+    <li>Non-Latin font pairings — CJK, Arabic, Devanagari, Cyrillic</li>
+    <li>Industry reasoning rules for anything not in the current 161</li>
+    <li>New tech stacks — Solid, Qwik, Remix, Blazor, Ionic, Lit, Kotlin Multiplatform</li>
+    <li>README translations into any language</li>
+    <li>WCAG 2.2 and cognitive-accessibility guidelines</li>
+  </ul>
+
+  <h2 id="faq">Frequently asked questions</h2>
+
+  <h3>What is a Claude skill?</h3>
+  <p>A folder of instructions and data that Claude Code loads automatically when it is relevant to your
+  request. Unlike a prompt you paste each time, a skill lives in your project — or globally in
+  <code>~/.claude/skills/</code> — and activates on its own. This one triggers whenever you ask for UI, UX,
+  design, layout, color, typography or accessibility work.</p>
+
+  <h3>Which Claude skill is best for UI/UX design?</h3>
+  <p>This is the most complete open-source option available: 84 UI styles, 192 color palettes, 74 font
+  pairings, 99 UX guidelines and 161 industry reasoning rules, all searchable offline. It is MIT licensed,
+  has no paid tier, and works across 19 AI coding assistants rather than Claude Code alone.</p>
+
+  <h3>Does this Claude skill work with Cursor and Windsurf?</h3>
+  <p>Yes — run <code>uipro init --ai cursor</code> or <code>uipro init --ai windsurf</code>. Seventeen other
+  assistants are supported too.</p>
+
+  <h3>Does it need an API key or send data anywhere?</h3>
+  <p>No. The database is local CSV and the search engine uses only the Python standard library. No network
+  calls, no keys, no telemetry.</p>
+
+  <h3>How is this different from telling Claude to "make it look good"?</h3>
+  <p>That phrase resolves to the average of the model's training data. This skill replaces the average with
+  an explicit, industry-matched design system plus a list of anti-patterns to avoid, then checks the result
+  against WCAG AA contrast, touch-target sizes and reduced-motion rules before delivery.</p>
+
+  <h3>Is it free? Can I use it commercially?</h3>
+  <p>Yes to both. MIT licensed, no paid tier, no paywalled data. Use it in commercial products, fork it,
+  ship it.</p>
+
+  <h3>Do I need to be a designer to contribute?</h3>
+  <p>No. Most contributions document a style, palette or rule that already exists in the wild. If you can
+  explain why a fintech dashboard shouldn't use pastel gradients, you can contribute.</p>
+
+</main>
+
+<footer>
+  <p>
+    <a href="https://github.com/nicohodt/claude-code-ui-ux-skill">GitHub</a> ·
+    <a href="https://github.com/nicohodt/claude-code-ui-ux-skill/blob/main/CONTRIBUTING.md">Contributing</a> ·
+    <a href="https://github.com/nicohodt/claude-code-ui-ux-skill/discussions">Discussions</a> ·
+    <a href="https://www.npmjs.com/package/ui-ux-pro-max-cli">npm</a> ·
+    <a href="https://github.com/nicohodt/claude-code-ui-ux-skill/blob/main/README.zh.md">简体中文</a>
+  </p>
+  <p>MIT licensed. Maintained by <a href="https://github.com/nicohodt">@nicohodt</a> and everyone who sends a pull request.</p>
+</footer>
+
+</body>
+</html>

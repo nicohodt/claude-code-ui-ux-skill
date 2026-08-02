@@ -1,0 +1,38 @@
+{
+  "branches": [
+    "main",
+    {
+      "name": "dev",
+      "channel": "beta",
+      "prerelease": "beta"
+    }
+  ],
+  "tagFormat": "v${version}",
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits"
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits"
+      }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "pkgRoot": "cli"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "successComment": "🎉 Shipped in **v${nextRelease.version}** — thank you for contributing!\n\nYour change is now live for everyone using the skill. If you haven't already, add yourself to [CONTRIBUTORS.md](https://github.com/nicohodt/claude-code-ui-ux-skill/blob/main/CONTRIBUTORS.md), and take a look at the [good first issues](https://github.com/nicohodt/claude-code-ui-ux-skill/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) if you'd like to pick up another one.",
+        "failTitle": "Release failed for ${branch.name}"
+      }
+    ]
+  ]
+}

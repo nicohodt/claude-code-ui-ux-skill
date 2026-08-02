@@ -1,0 +1,15 @@
+# Enables the "Sponsor" button on the repository.
+#
+# GitHub Sponsors must be activated for the account first:
+#   https://github.com/sponsors/nicohodt
+# Until it is, GitHub silently hides the button — it does not error.
+github: [nicohodt]
+
+# Uncomment any platform you actually set up. Leaving a dead link here is worse
+# than having no button at all.
+# open_collective:
+# ko_fi:
+# buy_me_a_coffee:
+# polar:
+# thanks_dev:
+# custom: []

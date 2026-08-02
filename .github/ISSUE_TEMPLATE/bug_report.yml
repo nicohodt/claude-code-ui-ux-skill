@@ -1,0 +1,52 @@
+name: 🐛 Bug Report
+description: Something in the skill, CLI, or generated design system is broken
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this. **Fill in what you know — partial reports are welcome**, we'd rather hear about the bug than have you skip it because a field was hard to answer.
+
+        Spotted the fix already? Go straight to a PR — see [CONTRIBUTING.md](https://github.com/nicohodt/claude-code-ui-ux-skill/blob/main/CONTRIBUTING.md).
+  - type: textarea
+    id: what
+    attributes:
+      label: What went wrong?
+      description: What did you expect to happen, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command or prompt that triggered it
+      description: The exact `uipro`/`search.py` command, or the prompt you gave your AI assistant.
+    validations:
+      required: true
+  - type: input
+    id: assistant
+    attributes:
+      label: AI assistant / platform
+      placeholder: Claude Code, Cursor, Windsurf, Copilot…
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: CLI version
+      description: Output of `uipro --version` or `npm list -g ui-ux-pro-max-cli`
+    validations:
+      required: false
+  - type: input
+    id: os
+    attributes:
+      label: OS
+      placeholder: macOS 15 / Windows 11 / Ubuntu 24.04
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error output or screenshots
+      render: shell
+    validations:
+      required: false

@@ -1,0 +1,43 @@
+name: 💡 Feature Request
+description: Suggest a new capability, stack, or improvement
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Proposals are welcome and always get an answer. **You never need permission to open a PR** — if you'd rather just build it, do that instead.
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - New tech stack support
+        - Search engine / ranking improvement
+        - CLI improvement
+        - New AI assistant target
+        - Design system generator
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What do you want to see added or changed?
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Why is this useful?
+      description: A concrete use case or example project helps a lot.
+    validations:
+      required: true
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Would you like to build it?
+      description: Entirely optional — saying no is fine, the idea is still valuable.
+      options:
+        - label: I'd like to work on this myself (we'll help you get started)
+          required: false

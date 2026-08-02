@@ -1,0 +1,63 @@
+name: 🎨 Suggest design data (style, palette, font pairing, rule)
+description: Propose a UI style, color palette, font pairing, industry rule, or UX guideline
+labels: [design-data, good first issue]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### This is the easiest way to contribute — and often the most useful.
+
+        The design database is plain CSV. **You can add this yourself in about five minutes, entirely in the browser**, without cloning anything:
+        [Your first contribution in 5 minutes →](https://github.com/nicohodt/claude-code-ui-ux-skill/blob/main/CONTRIBUTING.md#your-first-contribution-in-5-minutes)
+
+        If you'd rather just describe it and let someone else add it, that's completely fine — fill in the form below.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What are you suggesting?
+      options:
+        - UI style (styles.csv)
+        - Color palette (colors.csv)
+        - Font pairing (typography.csv)
+        - Industry reasoning rule (ui-reasoning.csv)
+        - UX guideline (ux-guidelines.csv)
+        - Icon set entry (icons.csv)
+        - Motion preset (motion.csv)
+        - Chart guidance (charts.csv)
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      placeholder: "Bauhaus Revival / Veterinary Clinic / Noto Sans JP + Zen Kaku Gothic"
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Colors as hex, fonts by name, styles by their visual characteristics — whatever fits what you're proposing.
+    validations:
+      required: true
+  - type: textarea
+    id: bestfor
+    attributes:
+      label: Best for
+      description: Which product types or industries should the AI pick this for?
+    validations:
+      required: true
+  - type: textarea
+    id: antipatterns
+    attributes:
+      label: Anti-patterns — what should the AI avoid here?
+      description: The single most valuable field. e.g. "no AI purple/pink gradients", "never dark mode", "no playful rounded fonts".
+    validations:
+      required: false
+  - type: checkboxes
+    id: selfserve
+    attributes:
+      label: Contributing it yourself?
+      options:
+        - label: I'll open a PR for this (thank you! 🎉)
+          required: false

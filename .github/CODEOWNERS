@@ -1,0 +1,19 @@
+# Code owners are requested for review automatically on every pull request.
+# See https://docs.github.com/articles/about-code-owners
+#
+# Note: this does NOT block contributions. Anyone may open a PR against any
+# path; ownership only controls who gets the review request.
+
+# Default owner for everything not matched below.
+*                               @nicohodt
+
+# Release, CI and publishing surfaces — changes here affect every user.
+/.github/workflows/             @nicohodt
+/.releaserc.json                @nicohodt
+/cli/package.json               @nicohodt
+/.claude-plugin/                @nicohodt
+/skill.json                     @nicohodt
+
+# The design database. Data PRs are the most common contribution and the
+# easiest to review; they are intentionally not gated any harder than the rest.
+/src/ui-ux-pro-max/data/        @nicohodt

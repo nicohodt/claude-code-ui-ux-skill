@@ -1,0 +1,74 @@
+{
+  "name": "ui-ux-pro-max-cli",
+  "version": "2.5.0",
+  "description": "Install the open-source Claude Code UI/UX skill (UI/UX Pro Max) in any project — 84 UI styles, 192 color palettes, 74 font pairings, 99 UX guidelines and 22 stack guides for Claude Code, Cursor, Windsurf, Copilot, Codex and Gemini CLI.",
+  "type": "module",
+  "homepage": "https://github.com/nicohodt/claude-code-ui-ux-skill#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicohodt/claude-code-ui-ux-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nicohodt/claude-code-ui-ux-skill/issues"
+  },
+  "bin": {
+    "uipro": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "assets"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "bun run src/index.ts",
+    "sync:assets": "node scripts/sync-assets.mjs",
+    "check:assets": "node scripts/sync-assets.mjs --check",
+    "validate:csv": "cd .. && python3 scripts/validate-csv.py",
+    "smoke:domains": "cd .. && bash scripts/smoke-domains.sh",
+    "smoke:stacks": "cd .. && bash scripts/smoke-stacks.sh",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run sync:assets && npm run validate:csv && npm run smoke:domains && npm run smoke:stacks && npm run typecheck && npm run build"
+  },
+  "keywords": [
+    "claude-skill",
+    "claude-code",
+    "claude-code-skill",
+    "claude-code-plugin",
+    "ui",
+    "ux",
+    "ui-design",
+    "ux-design",
+    "design",
+    "design-system",
+    "color-palette",
+    "typography",
+    "accessibility",
+    "claude",
+    "cursor",
+    "windsurf",
+    "copilot",
+    "kiro",
+    "trae",
+    "roocode",
+    "codex",
+    "qoder",
+    "ai",
+    "ai-agent",
+    "skill"
+  ],
+  "author": "nicohodt (https://github.com/nicohodt)",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "ora": "^8.1.1",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/bun": "^1.1.14",
+    "@types/node": "^22.10.1",
+    "@types/prompts": "^2.4.9",
+    "typescript": "^5.7.2"
+  }
+}

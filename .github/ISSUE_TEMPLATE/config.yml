@@ -1,0 +1,14 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 🌱 Want to contribute? Start here
+    url: https://github.com/nicohodt/claude-code-ui-ux-skill/blob/main/CONTRIBUTING.md
+    about: Your first PR can be a single CSV row, edited straight in the browser. No clone, no build step, no CLA.
+  - name: 🆕 Good first issues
+    url: https://github.com/nicohodt/claude-code-ui-ux-skill/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22
+    about: Small, well-scoped tasks that are ready for a new contributor to pick up.
+  - name: 💬 Questions & ideas
+    url: https://github.com/nicohodt/claude-code-ui-ux-skill/discussions
+    about: Ask anything — how to use the skill, whether an idea is worth building, or how to get unstuck on a PR.
+  - name: 🔒 Report a security vulnerability
+    url: https://github.com/nicohodt/claude-code-ui-ux-skill/security/advisories/new
+    about: Please report security issues privately, not in a public issue.

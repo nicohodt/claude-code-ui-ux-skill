@@ -1,0 +1,40 @@
+name: Welcome new contributors
+
+on:
+  pull_request_target:
+    types: [opened]
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    if: github.repository == 'nicohodt/claude-code-ui-ux-skill'
+    steps:
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: >
+            👋 Thanks for opening your first issue here — welcome!
+
+
+            A maintainer will reply within 48 hours. If you'd like to fix this yourself,
+            the [contributing guide](https://github.com/nicohodt/claude-code-ui-ux-skill/blob/main/CONTRIBUTING.md#your-first-contribution-in-5-minutes)
+            has a five-minute path that doesn't require cloning the repo — most of this
+            project's design data is plain CSV you can edit in the browser.
+          pr-message: >
+            🎉 Thanks for your first pull request — this is exactly how the project grows.
+
+
+            A maintainer will take a first look within 48 hours. If CI complains about
+            asset sync or CSV formatting, don't worry about it: we'll tell you exactly what
+            to change, or push the fix for you. Nothing here is a reason to close your PR.
+
+
+            Don't forget to add yourself to
+            [CONTRIBUTORS.md](https://github.com/nicohodt/claude-code-ui-ux-skill/blob/main/CONTRIBUTORS.md)
+            — every merged change earns a spot.

@@ -1,0 +1,119 @@
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main, dev]
+  workflow_dispatch:
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python:
+    name: Python ${{ matrix.python-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      # Explicit combinations rather than a full cross-product: the suite is
+      # platform-sensitive (CSV line endings, path handling) so every OS is
+      # covered, but old Python is only tested on Linux — setup-python has no
+      # 3.9 build for ARM macOS runners.
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python-version: '3.9'
+          - os: ubuntu-latest
+            python-version: '3.11'
+          - os: ubuntu-latest
+            python-version: '3.13'
+          - os: macos-latest
+            python-version: '3.13'
+          - os: windows-latest
+            python-version: '3.13'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install pytest
+        run: python -m pip install --upgrade pip pytest
+
+      - name: Run test suite
+        run: python -m pytest -v
+
+  data-validation:
+    name: CSV schema + domain/stack smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Validate CSV schemas
+        run: python3 scripts/validate-csv.py
+
+      - name: Smoke-test every search domain
+        run: bash scripts/smoke-domains.sh
+
+      - name: Smoke-test every stack
+        run: bash scripts/smoke-stacks.sh
+
+  cli:
+    name: CLI typecheck + build + e2e
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: cli/package-lock.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install CLI dependencies
+        working-directory: cli
+        run: npm ci
+
+      - name: Typecheck
+        working-directory: cli
+        run: npm run typecheck
+
+      - name: Build
+        working-directory: cli
+        run: npm run build
+
+      - name: Verify `uipro init` produces a working skill
+        run: |
+          mkdir -p /tmp/uipro-smoke
+          cd /tmp/uipro-smoke
+          node "$GITHUB_WORKSPACE/cli/dist/index.js" init --ai claude --offline
+          test -f .claude/skills/ui-ux-pro-max/SKILL.md
+          python3 .claude/skills/ui-ux-pro-max/scripts/search.py "saas dashboard" --design-system -p Smoke
+
+      - name: Install Playwright
+        working-directory: cli
+        run: npx playwright install --with-deps chromium
+
+      - name: Run preview e2e tests
+        working-directory: cli
+        run: npx playwright test
+
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: cli/playwright-report/
+          retention-days: 7

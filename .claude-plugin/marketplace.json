@@ -1,0 +1,41 @@
+{
+  "name": "claude-code-ui-ux-skill",
+  "id": "claude-code-ui-ux-skill",
+  "owner": {
+    "name": "nicohodt",
+    "url": "https://github.com/nicohodt"
+  },
+  "metadata": {
+    "description": "The open-source Claude Code UI/UX skill: 84 styles, 192 palettes, 74 font pairings, 161 industry rules, 25 charts, and 22 stack guidelines",
+    "version": "2.11.0"
+  },
+  "plugins": [
+    {
+      "name": "ui-ux-pro-max",
+      "source": "./",
+      "description": "Professional UI/UX design intelligence for AI coding assistants. Includes searchable databases of styles, colors, typography, charts, and UX guidelines for React, Next.js, Astro, Vue, Nuxt.js, Nuxt UI, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, Jetpack Compose, Angular, Laravel, JavaFX, and Three.js.",
+      "version": "2.11.0",
+      "author": {
+        "name": "nicohodt",
+        "url": "https://github.com/nicohodt"
+      },
+      "homepage": "https://github.com/nicohodt/claude-code-ui-ux-skill",
+      "license": "MIT",
+      "keywords": [
+        "claude-skill",
+        "claude-code",
+        "ui",
+        "ux",
+        "design",
+        "styles",
+        "typography",
+        "color-palette",
+        "accessibility",
+        "charts",
+        "components"
+      ],
+      "category": "design",
+      "strict": false
+    }
+  ]
+}
