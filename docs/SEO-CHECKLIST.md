@@ -20,14 +20,16 @@ The open-source Claude skill for UI/UX design. 84 UI styles, 192 color palettes,
 
 **Website** — `https://nicohodt.github.io/claude-code-ui-ux-skill/`
 
-**Topics** — add all of these (GitHub topic pages are indexed and drive internal discovery):
+**Topics** — GitHub allows a **maximum of 20**. These are the 20 currently applied (topic pages are indexed and drive internal discovery):
 
 ```
 claude-skill  claude-code  claude-code-skill  claude-code-plugin  anthropic
-ui-ux  ui-design  ux-design  design-system  design-tokens  color-palette
-typography  accessibility  wcag  ai-agents  ai-coding-assistant  cursor
-windsurf  github-copilot  developer-tools  hacktoberfest  good-first-issue
+ui-ux  ui-design  ux-design  design-system  color-palette  typography
+accessibility  wcag  ai-agents  ai-coding-assistant  cursor  windsurf
+github-copilot  hacktoberfest  good-first-issue
 ```
+
+`design-tokens` and `developer-tools` were dropped to fit the cap — both are generic enough that the signal is drowned out.
 
 > `hacktoberfest` and `good-first-issue` are contributor-acquisition topics — people browse them specifically looking for projects to contribute to.
 

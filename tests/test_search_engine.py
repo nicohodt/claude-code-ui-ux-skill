@@ -168,10 +168,19 @@ def test_markdown_output_format_is_supported(design_system) -> None:
 
 
 def _run_cli(*args: str) -> subprocess.CompletedProcess:
+    """Invoke search.py and decode its output as UTF-8.
+
+    ``search.py`` deliberately forces a UTF-8 stdout wrapper so its box-drawing
+    output survives redirection on Windows. ``text=True`` alone would decode
+    that with the *locale* codec (cp1252 on Windows runners), which raises
+    UnicodeDecodeError on the box characters and hands back ``None``.
+    """
     return subprocess.run(
         [sys.executable, str(SCRIPTS_DIR / "search.py"), *args],
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
         timeout=120,
     )
 

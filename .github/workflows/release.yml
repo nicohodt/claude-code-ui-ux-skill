@@ -49,7 +49,27 @@ jobs:
         working-directory: cli
         run: npm run build
 
+      # The `secrets` context is not available in a job-level `if`, so the
+      # check has to happen in a step.
+      - name: Check for an npm token
+        id: npm_token
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -n "$NPM_TOKEN" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Skip release (no npm token configured)
+        if: steps.npm_token.outputs.present != 'true'
+        run: |
+          echo "::notice title=Release skipped::NPM_TOKEN is not set, so semantic-release cannot publish ui-ux-pro-max-cli."
+          echo "Add the secret under Settings → Secrets and variables → Actions to enable automated releases."
+
       - name: Run semantic-release
+        if: steps.npm_token.outputs.present == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
